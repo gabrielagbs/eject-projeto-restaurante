@@ -14,7 +14,7 @@ class ReservaCreateView(CreateView):
     model = Reserva
     form_class = ReservaForm
     template_name = 'reserva_form.html'
-    success_url = reverse_lazy('minhas_reservas')
+    success_url = reverse_lazy('home')
 
     def form_valid(self, form):
         # Atribui automaticamente status "pendente" (já é o padrão)
@@ -49,6 +49,8 @@ class ReservaDeleteView(DeleteView):
 def home(request):
     return render(request, 'index.html')
 
+def Sobre_nos(request):
+    return render(request, 'sobre_nos.html')
 
 class PostListView(ListView):
     model = Post
